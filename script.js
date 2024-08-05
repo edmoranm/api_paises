@@ -1,7 +1,7 @@
 document.getElementById('obtenerPais').addEventListener('click', () => {
     const nombrePais = document.getElementById('countryInput').value;
     fetch(`https://restcountries.com/v3.1/name/${nombrePais}`)
-        .then(response => response.json())
+        .then(respuesta => respuesta.json())
         .then(data => {
             const pais = data[0];
             const informacionPais = `
@@ -12,7 +12,7 @@ document.getElementById('obtenerPais').addEventListener('click', () => {
                 <p><strong>Área:</strong> ${pais.area} km²</p>
                 <p><strong>Moneda:</strong> ${Object.values(pais.currencies)[0].name}</p>
                 <p><strong>Lenguajes:</strong> ${Object.values(pais.languages).join(', ')}</p>
-                <img src="${pais.flags.svg}" alt="Bandera de ${pais.name.common}" width="200">
+              
             `;
             document.getElementById('countryInfo').innerHTML = informacionPais;
         })
