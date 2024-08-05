@@ -12,7 +12,7 @@ document.getElementById('obtenerPais').addEventListener('click', () => {
                 <p><strong>Área:</strong> ${pais.area} km²</p>
                 <p><strong>Moneda:</strong> ${Object.values(pais.currencies)[0].name}</p>
                 <p><strong>Lenguajes:</strong> ${Object.values(pais.languages).join(', ')}</p>
-              
+                <img src="${pais.flags.svg}" alt="Bandera de ${pais.name.common}" width="200">
             `;
             document.getElementById('countryInfo').innerHTML = informacionPais;
         })
